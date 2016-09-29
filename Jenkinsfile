@@ -24,7 +24,7 @@ def deployDockerImage() {
     stage 'build'
     initDocker()
     sh 'gradle clean'
-    sh 'gradle shadowJar'
+    sh 'gradle build'
 
     dir('docker') {
         deleteDir()
