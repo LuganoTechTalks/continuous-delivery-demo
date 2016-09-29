@@ -39,8 +39,9 @@ def deployDockerImage() {
             sh "cp ../build/libs/continuous-delivery-demo-*.jar ."
             sh 'cp ../Dockerfile .'
             docker.withRegistry("https://docker-registry.newsriver.io:5000/") {
+                def image
                 stage ('build docker image'){
-                    def image = docker.build("continuous-delivery-demo:latest")
+                    image = docker.build("continuous-delivery-demo:latest")
                 }
                 stage ('upload docker image'){
                     image.push(env.BUILD_NUMBER)
