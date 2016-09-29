@@ -24,7 +24,7 @@ class GreetingController {
 
     //private final String bgColor = "#F6CECE"; //red
     private final String bgColor = "#CCFFCC"; //green
-    
+
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
 
