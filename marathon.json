@@ -1,29 +1,21 @@
 {
-  "id": "/newscron/newscron-crawler",
+  "id": "continuous-delivery-demo",
   "cmd": null,
-  "cpus": 0.5,
-  "mem": 3000,
+  "cpus": 0.1,
+  "mem": 100,
   "disk": 0,
   "instances": 1,
-  "constraints": [
-    [
-      "hostname",
-      "CLUSTER",
-      "46.4.71.105"
-    ]
-  ],
   "container": {
     "type": "DOCKER",
-    "volumes": [
-      {
-        "containerPath": "/home/DISCO_Dictionaries/",
-        "hostPath": "/root/DISCO_Dictionaries/",
-        "mode": "RW"
-      }
-    ],
     "docker": {
-      "image": "docker-registry.newsriver.io:5000/newscron-crawler:latest",
-      "network": "HOST",
+      "image": "docker-registry.newsriver.io:5000/continuous-delivery-demo:latest",
+      "network": "BRIDGE",
+      "portMappings": [
+        {
+          "containerPort": 8080,
+          "hostPort": 0,
+          "protocol": "tcp"
+        }],
       "privileged": false,
       "parameters": [],
       "forcePullImage": true
@@ -31,11 +23,11 @@
   },
   "healthChecks": [
     {
-      "path": "/RSSCrawlerStatus",
+      "path": "/",
       "protocol": "HTTP",
       "portIndex": 0,
-      "gracePeriodSeconds": 90,
-      "intervalSeconds": 60,
+      "gracePeriodSeconds":5,
+      "intervalSeconds": 10,
       "timeoutSeconds": 20,
       "maxConsecutiveFailures": 3,
       "ignoreHttp1xx": false
