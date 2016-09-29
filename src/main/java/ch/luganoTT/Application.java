@@ -37,7 +37,7 @@ class GreetingController {
 
         StringBuilder stringBuilder = new StringBuilder()
                 .append("<HTML>")
-                .append("<head><meta http-equiv='refresh' content='1'></head>")
+                .append("<head><meta http-equiv='refresh' content='5'></head>")
                 .append("<BODY bgcolor=\"").append(bgColor).append("\">")
                 .append("<h1>Hello Lugano Tech Talks!! ").append(sdf.format(new Date())).append("</h1>")
                 .append("</BODY>")
