@@ -25,11 +25,10 @@ public class Application {
 @Controller
 class GreetingController {
 
-    SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");
+    private static final SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");
 
     private final String bgColor = "#F6CECE"; //red
     //private final String bgColor = "#CCFFCC"; //green
-
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
     @ResponseBody
