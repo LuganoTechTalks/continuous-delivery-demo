@@ -1,8 +1,8 @@
 {
   "id": "continuous-delivery-demo",
   "cmd": null,
-  "cpus": 0.1,
-  "mem": 100,
+  "cpus": 0.5,
+  "mem": 500,
   "disk": 0,
   "instances": 1,
   "container": {
