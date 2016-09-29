@@ -39,7 +39,7 @@ class GreetingController {
                 .append("<HTML>")
                 .append("<head><meta http-equiv='refresh' content='5'></head>")
                 .append("<BODY bgcolor=\"").append(bgColor).append("\">")
-                .append("<h1>Hello Lugano Tech Talks!! ").append(sdf.format(new Date())).append("</h1>")
+                .append("<h1 style='margin-top: 100px;' align='center'>Hello Lugano Tech Talks!! ").append(sdf.format(new Date())).append("</h1>")
                 .append("</BODY>")
                 .append("</HTML>");
 
