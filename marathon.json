@@ -21,6 +21,11 @@
       "forcePullImage": true
     }
   },
+  "labels": {
+    "HAPROXY_GROUP": "external",
+    "HAPROXY_0_VHOST": "luganott.newsriver.io",
+    "HAPROXY_0_REDIRECT_TO_HTTPS": "true"
+  },
   "healthChecks": [
     {
       "path": "/",

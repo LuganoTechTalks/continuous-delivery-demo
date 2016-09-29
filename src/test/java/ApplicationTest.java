@@ -40,7 +40,7 @@ public class ApplicationTest {
     public void testBodyBackgroundColor() throws Exception {
         mockMvc.perform(get("/"))
                 .andExpect(status().isOk())
-                .andExpect(content().string(Matchers.containsString("bgcolor=\"#CCFFCC\"")));
+                .andExpect(content().string(Matchers.containsString("bgcolor=\"#F6CECE\"")));
     }
 
 
