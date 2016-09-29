@@ -32,7 +32,7 @@ def deployDockerImage() {
     sh 'mkdir docker'
 
     dir('docker') {
-        sh "cp ../build/libs/continuous-delivery-demo.jar"
+        sh "cp ../build/libs/continuous-delivery-demo.jar ."
         sh 'cp ../Dockerfile .'
         docker.withRegistry("https://docker-registry.newsriver.io:5000/") {
             stage 'build docker image'
