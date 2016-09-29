@@ -9,6 +9,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 @Configuration
 @ComponentScan
 @EnableAutoConfiguration
@@ -22,21 +25,21 @@ public class Application {
 @Controller
 class GreetingController {
 
+    SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");
+
     private final String bgColor = "#F6CECE"; //red
     //private final String bgColor = "#CCFFCC"; //green
 
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
-
-
     @ResponseBody
-
     public String helloHtml() {
 
         StringBuilder stringBuilder = new StringBuilder()
                 .append("<HTML>")
+                .append("<head><meta http-equiv='refresh' content='1'></head>")
                 .append("<BODY bgcolor=\"").append(bgColor).append("\">")
-                .append("<h1>Hello Lugano Tech Talks!!</h1>")
+                .append("<h1>Hello Lugano Tech Talks!! ").append(sdf.format(new Date())).append("</h1>")
                 .append("</BODY>")
                 .append("</HTML>");
 
