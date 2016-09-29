@@ -1,5 +1,5 @@
+version '1.0' + '.' + (System.getenv("BUILD_NUMBER") ?: 'dev')
 apply plugin: 'java'
-
 /*  IGNORE THIS */
 //--------------
 buildscript {
